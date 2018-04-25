@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_selection"
+        android:src="@mipmap/cursor"
+        android:scaleType="fitXY"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:onClick="ib_selection_click"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:foreground="@drawable/drawable_border" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_eraser"
+        android:src="@mipmap/eraser"
+        android:scaleType="fitXY"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:onClick="ib_eraser_click"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ib_selection" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_rectangle"
+        android:src="@mipmap/rect"
+        android:scaleType="fitXY"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:onClick="ib_rectangle_click"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ib_fill" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_fill"
+        android:src="@mipmap/bucket"
+        android:scaleType="fitXY"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:onClick="ib_fill_click"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ib_eraser" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_circle"
+        android:src="@mipmap/circle"
+        android:scaleType="fitXY"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:onClick="ib_circle_click"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ib_rectangle" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_line"
+        android:src="@mipmap/line"
+        android:scaleType="fitXY"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:onClick="ib_line_click"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ib_circle" />
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_red"
+        android:maxWidth="15dp"
+        android:maxHeight="15dp"
+        android:minHeight="15dp"
+        android:minWidth="15dp"
+        android:onClick="ib_colour_click"
+        android:background="#E51400"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/ib_line"
+        android:foreground="@drawable/drawable_border" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_green"
+        android:maxWidth="15dp"
+        android:maxHeight="15dp"
+        android:minHeight="15dp"
+        android:minWidth="15dp"
+        android:layout_marginEnd="10px"
+        android:onClick="ib_colour_click"
+        android:background="#60A917"
+        android:layout_alignTop="@+id/ib_red"
+        android:layout_toEndOf="@+id/ib_red" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_blue"
+        android:maxWidth="15dp"
+        android:maxHeight="15dp"
+        android:minHeight="15dp"
+        android:minWidth="15dp"
+        android:onClick="ib_colour_click"
+        android:background="#0050EF"
+        android:layout_below="@+id/ib_red"
+        android:layout_alignStart="@+id/ib_red"
+        android:layout_toStartOf="@+id/ib_green" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ib_yellow"
+        android:maxWidth="15dp"
+        android:maxHeight="15dp"
+        android:minHeight="15dp"
+        android:minWidth="15dp"
+        android:onClick="ib_colour_click"
+        android:background="#F0A30A"
+        android:layout_alignTop="@+id/ib_blue"
+        android:layout_alignStart="@+id/ib_green"
+        android:layout_alignEnd="@+id/ib_green"
+        android:layout_alignBottom="@+id/ib_blue" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="100dp"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:minWidth="100dp"
+        android:onClick="ib_thickness_click"
+        android:src="@drawable/drawable_small_thickness"
+        android:id="@+id/ib_thickness"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/ib_green" />
+
+    <ScrollView
+        android:id="@+id/layout_canvas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ib_rectangle"></ScrollView>
+
+</RelativeLayout>
